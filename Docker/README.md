@@ -27,7 +27,7 @@
 
 ```md
 `docker container rm [OPTION] [CONTAINER ID]` : 컨테이너 삭제
-`--force` or `-f` : 실행 중인 컨테이너라도 삭제
+`--force` or `-f` : 실행 중인 컨테이너라도 명령 실행
 CONTAINER ID에 $(docker container ls --all -q)입력 시 모든 컨테이너 삭제
 ```
 
@@ -58,12 +58,22 @@ CONTAINER ID에 $(docker container ls --all -q)입력 시 모든 컨테이너 �
 `docker image history [IMAGE NAME]` : 이미지의 모든 레이어의 정보 출력
 ```
 
+### Docker Network 생성
+
+```md
+`docker network create [NAME] : 컨테이너 간 통신이 가능한 도커 네트워크 생성
+```
+
 ### Docker File
 
 ```md
-`FROM` : 이미지의 시작 이미지 설정
+`FROM [IMAGE] AS [NAME]` : 이미지의 시작 이미지 설정
 `ENV` : 환경 변수 값 지정 [key]=["value"]
 `WORKDIR` : 디렉토리를 만들고 작업 디렉토리 지정
 `COPY` : 로컬 파일을 복사 [원본경로] [복사경로]
-`CMD` : 이미지를 컨테이너로 실행 시 실행할 명령 지정
+
+- `--from=[STAGE NAME] [SOURCE PATH] [DESTINATION PATH]` : 해당 빌드 단계의 파일 복사
+  `CMD` : 이미지를 컨테이너로 실행 시 실행할 명령 지정
+  `RUN` : 컨테이너 안에서 명령 실행 후 결과를 이미지 레이어에 저장
+  `EXPORT [PORT]` : 컨테이너가 외부에 접속할 포트 설정
 ```
