@@ -52,7 +52,13 @@ CONTAINER ID에 $(docker container ls --all -q)입력 시 모든 컨테이너 �
 - `--tag [NAME]` or `-t` : 이미지 이름 설정
 ```
 
-### docker Image 정보
+### Docker Image 등록
+
+```md
+`docker image push [DOCKER ID]/[IMAGE NAME]` : 도커 이미지 도커 허브에 등록
+```
+
+### Docker Image 정보
 
 ```md
 `docker image history [IMAGE NAME]` : 이미지의 모든 레이어의 정보 출력
