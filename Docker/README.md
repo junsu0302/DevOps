@@ -11,6 +11,8 @@
 - `--detach` or `-d` : 컨테이너를 백그라운드에서 실행
 - `--name` : 컨테이너 이름 설정
 - `--env [KEY]:[VALUE] [IMAGE]` or `-e`: 컨테이너 환경 변수 설정
+- `--volume [VOLUME NAME]:[PATH]` or `-v` : 볼룸 연결
+- `--mount type=bind,source=[PATH],target=[PATH],[OPTION]` : 로컬 디렉토리와 컨테이너를 연결하여 양방향 동작 수행
 ```
 
 ### Docker Container 정보
@@ -82,4 +84,5 @@ CONTAINER ID에 $(docker container ls --all -q)입력 시 모든 컨테이너 �
   `CMD` : 이미지를 컨테이너로 실행 시 실행할 명령 지정
   `RUN` : 컨테이너 안에서 명령 실행 후 결과를 이미지 레이어에 저장
   `EXPORT [PORT]` : 컨테이너가 외부에 접속할 포트 설정
+  `VOLUME [PATH]` : 볼룸 설정
 ```
